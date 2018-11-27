@@ -56,16 +56,16 @@ void insertToTheHashMap(int key,int val)
 int searchVal(int keyF)
 {
     int i = 0 ;
-    // int location = hashFun(keyF);
-    // while(newHashMap[location].isOccupied != 0 || i != (numberofElements-1) )
-    // {
+    int location = (hashFun1(keyF) + i*hashFun2(keyF));
+    while(newHashMap[location].isOccupied != 0 || i != (numberofElements-1) )
+    {
 
-    //     location = hashFun(keyF) + i;
-    //     if(newHashMap[location].key == keyF)
-    //         return location;
-    //     else
-    //         i+= 1;    
-    // }
+        location = (hashFun1(keyF) + i*hashFun2(keyF));
+        if(newHashMap[location].key == keyF)
+             return location;
+        else
+             i+= 1;    
+     }
 }
 
 int main()
@@ -87,11 +87,11 @@ int main()
         cout << newHashMap[i].key << endl;
     }
 
-    // cout << "Enter the element to search:" ;
-    // int val;
-    // cin >> val;
-    // val =searchVal(val);
-    // cout << "\nthe location is : " << val;
+     cout << "Enter the element to search:" ;
+    int val;
+    cin >> val;
+    val =searchVal(val);
+    cout << "\nthe location is : " << val;
 
 
 
